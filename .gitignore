@@ -9,7 +9,5 @@ desktop.ini
 
 # Local env
 .env
-.env*.local
-
-.vercel
 .env*
+.env*.local

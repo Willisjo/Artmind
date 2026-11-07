@@ -21,4 +21,7 @@ npx serve .
 
 ## Deployment
 
-Every push to the `main` branch is deployed automatically to Vercel.
+Live site: **https://artmind-ebon.vercel.app**
+
+Every push to the `main` branch is deployed automatically to Vercel (Git integration
+on the `artmind` project). Pull requests get their own preview URLs.

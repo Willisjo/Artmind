@@ -31,8 +31,18 @@ h2{font-size:clamp(30px,4vw,46px)}.lead{font-size:18px;color:var(--mut)}
 .mini div{border-left:3px solid var(--gold);padding-left:16px}.mini b{display:block;font-family:'Playfair Display',serif;font-size:20px}
 .alt{background:var(--bg2)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:40px}
-.card{background:var(--card);border:1px solid var(--line);padding:30px;border-top:4px solid var(--c,var(--teal))}
-.card h3{font-size:22px}.card p{margin:0;color:var(--mut);font-size:15px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c,var(--teal));overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.card:hover,.card:focus-visible{transform:translateY(-6px);box-shadow:0 20px 44px rgba(8,22,24,.18)}
+.card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.card-img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bg2)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card:hover .card-img img,.card:focus-visible .card-img img{transform:scale(1.06)}
+.card-body{display:flex;flex-direction:column;flex:1;padding:26px 30px 30px}
+.card .num{font-size:36px}
+.card h3{font-size:22px;margin:.15em 0 .4em}.card p{margin:0;color:var(--mut);font-size:15px}
+.more{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--teal)}
+.more svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .25s}
+.card:hover .more svg,.card:focus-visible .more svg{transform:translateX(4px)}
 .num{font-family:'Playfair Display',serif;font-size:44px;color:var(--teal);opacity:.55;line-height:1}
 .tag{font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);font-weight:700}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
@@ -69,12 +79,12 @@ footer .brand{justify-content:center;margin-bottom:18px}footer .brand img{height
 <div class="tag">Community projects</div><h2>Our programmes</h2>
 <p class="lead">Six ways we bring art to the people and places that need it.</p>
 <div class="cards">
-<div class="card" style="--c:var(--gold)"><div class="num">01</div><h3>Artseeds</h3><p>School art competitions and creative talent development.</p></div>
-<div class="card" style="--c:var(--red)"><div class="num">02</div><h3>Art in Action</h3><p>Community outreach and creative engagement.</p></div>
-<div class="card" style="--c:var(--blue)"><div class="num">03</div><h3>The Creative Journey</h3><p>Creative skills and mentorship.</p></div>
-<div class="card" style="--c:var(--teal)"><div class="num">04</div><h3>Unmasking Stories</h3><p>Themed creative gatherings and sip and paint experiences.</p></div>
-<div class="card" style="--c:var(--gold)"><div class="num">05</div><h3>The Creative Edge</h3><p>Tailored creative experiences for organisations.</p></div>
-<div class="card" style="--c:var(--red)"><div class="num">06</div><h3>Art for Change</h3><p>Community murals, environmental posters, recycled-art creations and collaborative paintings.</p></div>
+<a class="card" style="--c:var(--gold)" href="programme.html?p=artseeds"><span class="card-img"><img src="images/programmes/artseeds/01.jpeg" alt="Learners gathered at an Artseeds school session" loading="lazy" decoding="async"></span><div class="card-body"><div class="num">01</div><h3>Artseeds</h3><p>School art competitions and creative talent development.</p><span class="more">View gallery<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+<a class="card" style="--c:var(--red)" href="programme.html?p=art-in-action"><span class="card-img"><img src="images/programmes/art-in-action/01.jpeg" alt="Paintings on display at an Art in Action showcase" loading="lazy" decoding="async"></span><div class="card-body"><div class="num">02</div><h3>Art in Action</h3><p>Community outreach and creative engagement.</p><span class="more">View gallery<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+<a class="card" style="--c:var(--blue)" href="programme.html?p=creative-journey"><span class="card-img"><img src="images/programmes/creative-journey/02.jpeg" alt="A mentor speaking to learners at a Creative Journey session" loading="lazy" decoding="async"></span><div class="card-body"><div class="num">03</div><h3>The Creative Journey</h3><p>Creative skills and mentorship.</p><span class="more">View gallery<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+<a class="card" style="--c:var(--teal)" href="programme.html?p=unmasking-stories"><span class="card-img"><img src="images/img-9.jpg" alt="Young artists holding their painted canvases at an Unmasking Stories session" loading="lazy" decoding="async"></span><div class="card-body"><div class="num">04</div><h3>Unmasking Stories</h3><p>Themed creative gatherings and sip and paint experiences.</p><span class="more">View gallery<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+<a class="card" style="--c:var(--gold)" href="programme.html?p=creative-edge"><span class="card-img"><img src="images/programmes/creative-edge/03.jpeg" alt="Participants painting a large canvas together at a Creative Edge session" loading="lazy" decoding="async"></span><div class="card-body"><div class="num">05</div><h3>The Creative Edge</h3><p>Tailored creative experiences for organisations.</p><span class="more">View gallery<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+<a class="card" style="--c:var(--red)" href="programme.html?p=art-for-change"><span class="card-img"><img src="images/programmes/art-for-change/05.jpeg" alt="An artist with a framed recycled-paper portrait at an Art for Change exhibition" loading="lazy" decoding="async"></span><div class="card-body"><div class="num">06</div><h3>Art for Change</h3><p>Community murals, environmental posters, recycled-art creations and collaborative paintings.</p><span class="more">View gallery<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
 </div></div></section>
 
 <section id="schools"><div class="wrap split"><img class="split-img" src="images/img-5.jpg" alt="Learners in a classroom during an ArtMind school project"><div>

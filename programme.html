@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Programmes | ArtMind Creative Network</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#0e1819">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--bg2:#f0ebe2;--ink:#1d2a2b;--mut:#5b6b6c;--teal:#4f8a8b;--gold:#f0c43a;--red:#e63946;--blue:#1c1ca8;--card:#fff;--line:#ddd6c9;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1819;--bg2:#142223;--ink:#f1ede4;--mut:#a5b4b4;--card:#182b2c;--line:#264041;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1819;--bg2:#142223;--ink:#f1ede4;--mut:#a5b4b4;--card:#182b2c;--line:#264041;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Montserrat,system-ui,sans-serif}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;margin:0 0 .5em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:calc(10px + env(safe-area-inset-top,0px)) 5vw 10px;background:rgba(10,20,21,.6);backdrop-filter:blur(10px);color:#fff}
+.brand{display:flex;align-items:center;gap:14px;color:#fff}
+.brand img{height:62px;width:auto}
+.bt{display:flex;flex-direction:column;line-height:1}
+.bt b{font:800 30px Montserrat,sans-serif;letter-spacing:-.01em}
+.bt span{font:700 13px Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+.bt em{font:500 17px 'Dancing Script',cursive;margin-top:4px;opacity:.92;font-style:normal;color:var(--gold)}
+.back{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.45);padding:11px 18px;border-radius:2px;transition:.25s}
+.back:hover{background:var(--gold);border-color:var(--gold);color:#1d2a2b}
+.hero{min-height:78vh;display:flex;align-items:flex-end;padding:150px 5vw 64px;color:#fff;background:linear-gradient(105deg,rgba(8,22,24,.92),rgba(8,22,24,.35)),var(--cover,#0a1415) center/cover}
+.hero .wrap{max-width:1180px;margin:0 auto;width:100%}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 16px}
+.hero h1{font-size:clamp(40px,6vw,74px);margin-bottom:.25em;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero .lead{font-size:18px;max-width:600px;opacity:.94;margin:0 0 26px}
+.hmeta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.hmeta span{border:1px solid rgba(255,255,255,.4);padding:6px 12px;border-radius:2px;opacity:.9}
+.btn{display:inline-block;padding:14px 30px;margin:0 12px 12px 0;border:2px solid var(--gold);background:var(--gold);color:#1d2a2b;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:.25s;cursor:pointer}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn.o{background:transparent;color:#fff;border-color:#fff}
+.btn.o:hover{background:#fff;color:#1d2a2b}
+section{padding:84px 5vw}
+.wrap{max-width:1180px;margin:0 auto}
+.tag{font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.ghead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+.ghead h2{font-size:clamp(28px,3.6vw,42px);margin:0}
+.count{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);font-weight:600;margin:0}
+.intro{max-width:700px;color:var(--mut);font-size:17px;margin:6px 0 34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.shot{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:var(--bg2);overflow:hidden;border-radius:3px;cursor:zoom-in;color:#fff}
+.shot img,.shot video{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.shot::after{content:"";position:absolute;inset:0;border:2px solid transparent;border-radius:3px;transition:border-color .25s}
+.shot:hover img,.shot:hover video{transform:scale(1.06)}
+.shot:hover::after{border-color:var(--gold)}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,22,24,.3)}
+.play svg{width:26px;height:26px;fill:#1d2a2b;margin-left:3px}
+.play::before{content:"";position:absolute;width:66px;height:66px;border-radius:50%;background:var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .25s}
+.play svg{position:relative}
+.shot:hover .play::before{transform:scale(1.09)}
+.vlabel{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;background:rgba(8,22,24,.72);padding:5px 10px;border-radius:2px}
+.note{margin-top:26px;padding:18px 22px;border-left:3px solid var(--gold);background:var(--bg2);color:var(--mut);font-size:15px}
+.alt{background:var(--bg2)}
+.backbar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.backbar h3{font-size:clamp(24px,3vw,32px);margin:0 0 6px}
+.backbar p{margin:0;color:var(--mut);max-width:520px}
+.btn.solid{background:var(--ink);border-color:var(--ink);color:var(--bg);margin:0}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+footer{background:#0a1415;color:#cfd8d8;padding:52px 5vw 34px;text-align:center;font-size:14px}
+footer .brand{justify-content:center;margin-bottom:16px}
+footer .brand img{height:104px}
+footer .bt b{font-size:38px}
+footer .bt span{font-size:16px}
+footer .bt em{font-size:22px}
+.dots{display:flex;gap:8px;justify-content:center;margin:14px 0}
+.dots i{width:12px;height:12px;border-radius:50%}
+.missing{padding:170px 5vw 90px;text-align:center;min-height:70vh}
+.missing h1{font-size:clamp(30px,5vw,48px)}
+.missing p{color:var(--mut);margin-bottom:26px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:rgba(5,12,13,.96);padding:70px 5vw 90px}
+.lb[hidden]{display:none}
+.lbstage{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.lbstage img,.lbstage video{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:3px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.lbbtn{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:50%;width:52px;height:52px;font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s;padding:0}
+.lbbtn:hover{background:var(--gold);border-color:var(--gold);color:#1d2a2b}
+.lbbtn.close{top:calc(18px + env(safe-area-inset-top,0px));right:18px;font-size:20px}
+.lbbtn.prev{left:14px;top:50%;transform:translateY(-50%)}
+.lbbtn.next{right:14px;top:50%;transform:translateY(-50%)}
+.lbbtn[disabled]{opacity:.25;cursor:default}
+.lbbtn[disabled]:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35);color:#fff}
+.lbbar{position:absolute;left:0;right:0;bottom:0;padding:14px 5vw calc(14px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;color:#cfd8d8;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;background:linear-gradient(transparent,rgba(5,12,13,.9))}
+@media(max-width:760px){.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.hero{min-height:70vh;padding:130px 6vw 48px}.bt b{font-size:20px}.bt span{font-size:10px}.bt em{font-size:13px}.brand img{height:44px}.brand{gap:10px}.back{padding:9px 12px;font-size:10px;letter-spacing:.1em}section{padding:60px 6vw}.lbbtn{width:44px;height:44px;font-size:22px}.lbbtn.prev{left:8px}.lbbtn.next{right:8px}footer .bt b{font-size:26px}footer .bt span{font-size:12px}footer .bt em{font-size:16px}footer .brand img{height:70px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body>
+
+<nav><a class="brand" href="index.html"><img src="images/img-3.png" alt="ArtMind palette logo"><span class="bt"><b>ArtMind</b><span>Creative Network</span><em>Where art inspires wholeness</em></span></a>
+<a class="back" href="index.html#programmes"><span aria-hidden="true">←</span> All programmes</a></nav>
+
+<header class="hero" id="hero"><div class="wrap">
+<p class="eyebrow" id="hEyebrow">Programmes</p>
+<h1 id="hTitle">Programmes</h1>
+<p class="lead" id="hLead"></p>
+<div class="hmeta" id="hMeta"></div>
+<a class="btn" href="#gallery">View gallery</a><a class="btn o" href="index.html#programmes">Back to programmes</a>
+</div></header>
+
+<main id="main">
+<section id="gallery"><div class="wrap">
+<div class="tag">Gallery</div>
+<div class="ghead"><h2 id="galTitle">Inside the programme</h2><p class="count" id="count"></p></div>
+<p class="intro" id="intro"></p>
+<div class="grid" id="grid"></div>
+<p class="note" id="note" hidden></p>
+</div></section>
+
+<section class="alt backbar"><div class="wrap">
+<div><h3>Want to see more?</h3><p>Every ArtMind programme has its own story. Head back and explore the others, or get in touch to bring one to your school or community.</p></div>
+<a class="btn solid" href="index.html#programmes"><span aria-hidden="true">←</span> Back to all programmes</a>
+</div></section>
+</main>
+
+<section class="missing" id="missing" hidden>
+<h1>Gallery not found</h1>
+<p>We couldn’t find that programme. Try one of the others.</p>
+<a class="btn" href="index.html#programmes">Back to all programmes</a>
+</section>
+
+<footer><span class="brand"><img src="images/img-3.png" alt="ArtMind palette logo"><span class="bt"><b>ArtMind</b><span>Creative Network</span><em>Where art inspires wholeness</em></span></span>
+<div class="dots"><i style="background:#e63946"></i><i style="background:#f0c43a"></i><i style="background:#1c1ca8"></i><i style="background:#1596b0"></i></div>
+<div>ArtMind Creative Network · Where art inspires wholeness</div><div style="opacity:.6;margin-top:8px">© 2026 ArtMind Creative Network. All rights reserved.</div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Gallery viewer" hidden>
+<button class="lbbtn close" id="lbClose" type="button" aria-label="Close viewer">✕</button>
+<button class="lbbtn prev" id="lbPrev" type="button" aria-label="Previous item">‹</button>
+<button class="lbbtn next" id="lbNext" type="button" aria-label="Next item">›</button>
+<div class="lbstage" id="lbStage"></div>
+<div class="lbbar"><span id="lbCaption"></span><span id="lbCount"></span></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var PROGRAMMES = {
+    "artseeds": {
+      num: "01", title: "Artseeds", eyebrow: "Programme 01 · School projects",
+      cover: "images/programmes/artseeds/01.jpeg",
+      lead: "School art competitions and creative talent development.",
+      intro: "Artseeds takes art into schools through competitions, exhibitions and mentorship — giving learners a platform to explore their talent, express themselves and grow in confidence.",
+      folder: "images/programmes/artseeds", photos: 8
+    },
+    "art-in-action": {
+      num: "02", title: "Art in Action", eyebrow: "Programme 02 · Community",
+      cover: "images/programmes/art-in-action/01.jpeg",
+      lead: "Community outreach and creative engagement.",
+      intro: "Art in Action brings art out of the studio and into the community — shared creative sessions where people make, show and talk about art together.",
+      folder: "images/programmes/art-in-action", photos: 6
+    },
+    "creative-journey": {
+      num: "03", title: "The Creative Journey", eyebrow: "Programme 03 · Mentorship",
+      cover: "images/programmes/creative-journey/02.jpeg",
+      lead: "Creative skills and mentorship.",
+      intro: "Practical art workshops, painting, drawing and creative portfolio development, alongside mentorship that helps young people grow their artistic skills and explore creative opportunities.",
+      folder: "images/programmes/creative-journey", photos: 3, video: "04.mp4"
+    },
+    "unmasking-stories": {
+      num: "04", title: "Unmasking Stories", eyebrow: "Programme 04 · Gatherings",
+      cover: "images/img-9.jpg",
+      lead: "Themed creative gatherings and sip and paint experiences.",
+      intro: "Safe spaces for expression through Sip &amp; Paint, emotion-inspired artwork and visual storytelling — each session opening doors to conversations about mental health, self-discovery and connection.",
+      items: [
+        {src: "images/img-9.jpg", alt: "Young artists holding their finished sunset canvases"},
+        {src: "images/img-7.jpg", alt: "Participants painting at a Sip & Paint gathering"}
+      ]
+    },
+    "creative-edge": {
+      num: "05", title: "The Creative Edge", eyebrow: "Programme 05 · Organisations",
+      cover: "images/programmes/creative-edge/03.jpeg",
+      lead: "Tailored creative experiences for organisations.",
+      intro: "Team gatherings, themed sessions and sip and paint experiences designed around your goals — creative experiences built for organisations that want to make something together.",
+      folder: "images/programmes/creative-edge", photos: 6
+    },
+    "art-for-change": {
+      num: "06", title: "Art for Change", eyebrow: "Programme 06 · Community action",
+      cover: "images/programmes/art-for-change/05.jpeg",
+      lead: "Community murals, environmental posters, recycled-art creations and collaborative paintings.",
+      intro: "Through community murals, environmental posters, recycled-art creations and collaborative paintings, we spark conversations about mental health, environmental conservation and positive social change.",
+      folder: "images/programmes/art-for-change", photos: 6
+    }
+  };
+
+  var params = new URLSearchParams(location.search);
+  var key = (params.get("p") || location.hash.replace("#", "") || "").toLowerCase();
+  var p = PROGRAMMES[key];
+
+  if (!p) {
+    document.getElementById("main").hidden = true;
+    document.getElementById("hero").hidden = true;
+    document.getElementById("missing").hidden = false;
+    document.title = "Gallery not found | ArtMind Creative Network";
+    return;
+  }
+
+  function text(id, value) {
+    var node = document.getElementById(id);
+    if (node) node.innerHTML = value;
+  }
+
+  /* ---- build gallery items ---- */
+  var items = [];
+  if (p.items) {
+    items = p.items.map(function(it){ return {type: "photo", src: it.src, alt: it.alt}; });
+  } else {
+    for (var i = 1; i <= p.photos; i++) {
+      var n = String(i).padStart(2, "0");
+      items.push({type: "photo", src: p.folder + "/" + n + ".jpeg", alt: p.title + " — photo " + i});
+    }
+    if (p.video) items.push({type: "video", src: p.folder + "/" + p.video, alt: p.title + " — video"});
+  }
+
+  var photos = items.filter(function(it){ return it.type === "photo"; }).length;
+  var videos = items.length - photos;
+  var meta = [photos + (photos === 1 ? " photo" : " photos")];
+  if (videos) meta.push(videos + (videos === 1 ? " video" : " videos"));
+
+  /* ---- page content ---- */
+  document.title = p.title + " | ArtMind Creative Network";
+  document.getElementById("hero").style.setProperty("--cover", 'url("' + p.cover + '")');
+  text("hEyebrow", p.eyebrow);
+  text("hTitle", p.title);
+  text("hLead", p.lead);
+  text("hMeta", meta.map(function(m){ return "<span>" + m + "</span>"; }).join(""));
+  text("galTitle", "Inside " + p.title);
+  text("count", meta.join(" · "));
+  text("intro", p.intro);
+
+  if (p.note) {
+    var note = document.getElementById("note");
+    note.textContent = p.note;
+    note.hidden = false;
+  }
+
+  /* ---- tiles ---- */
+  var grid = document.getElementById("grid");
+  items.forEach(function(it, index){
+    var tile = document.createElement("button");
+    tile.type = "button";
+    tile.className = "shot";
+    tile.setAttribute("aria-label", "Open " + (it.type === "video" ? "video " : "photo ") + (index + 1) + " of " + items.length);
+
+    if (it.type === "photo") {
+      var img = document.createElement("img");
+      img.src = it.src;
+      img.alt = it.alt;
+      img.loading = index < 2 ? "eager" : "lazy";
+      img.decoding = "async";
+      tile.appendChild(img);
+    } else {
+      var vid = document.createElement("video");
+      vid.src = it.src;
+      vid.muted = true;
+      vid.playsInline = true;
+      vid.preload = "metadata";
+      vid.setAttribute("muted", "");
+      vid.setAttribute("playsinline", "");
+      tile.appendChild(vid);
+      var play = document.createElement("span");
+      play.className = "play";
+      play.setAttribute("aria-hidden", "true");
+      play.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg>';
+      tile.appendChild(play);
+      var label = document.createElement("span");
+      label.className = "vlabel";
+      label.textContent = "Video";
+      tile.appendChild(label);
+    }
+
+    tile.addEventListener("click", function(){ openViewer(index, tile); });
+    grid.appendChild(tile);
+  });
+
+  /* ---- lightbox ---- */
+  var lb = document.getElementById("lb");
+  var stage = document.getElementById("lbStage");
+  var caption = document.getElementById("lbCaption");
+  var counter = document.getElementById("lbCount");
+  var prev = document.getElementById("lbPrev");
+  var next = document.getElementById("lbNext");
+  var closeBtn = document.getElementById("lbClose");
+  var current = 0;
+  var lastTile = null;
+
+  function render() {
+    var it = items[current];
+    stage.textContent = "";
+    if (it.type === "photo") {
+      var img = document.createElement("img");
+      img.src = it.src;
+      img.alt = it.alt;
+      stage.appendChild(img);
+    } else {
+      var vid = document.createElement("video");
+      vid.src = it.src;
+      vid.controls = true;
+      vid.autoplay = true;
+      vid.playsInline = true;
+      vid.preload = "auto";
+      vid.setAttribute("playsinline", "");
+      stage.appendChild(vid);
+      var playing = vid.play();
+      if (playing && typeof playing.catch === "function") playing.catch(function(){});
+    }
+    caption.textContent = p.title + (it.type === "video" ? " · video" : "");
+    counter.textContent = (current + 1) + " / " + items.length;
+    prev.disabled = items.length < 2;
+    next.disabled = items.length < 2;
+  }
+
+  function openViewer(index, tile) {
+    current = index;
+    lastTile = tile;
+    render();
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+
+  function closeViewer() {
+    lb.hidden = true;
+    stage.textContent = "";
+    document.body.style.overflow = "";
+    if (lastTile) lastTile.focus();
+  }
+
+  function step(dir) {
+    if (items.length < 2) return;
+    current = (current + dir + items.length) % items.length;
+    render();
+  }
+
+  closeBtn.addEventListener("click", closeViewer);
+  prev.addEventListener("click", function(){ step(-1); });
+  next.addEventListener("click", function(){ step(1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb || e.target === stage) closeViewer(); });
+
+  document.addEventListener("keydown", function(e){
+    if (lb.hidden) return;
+    if (e.key === "Escape") { closeViewer(); }
+    else if (e.key === "ArrowRight") { step(1); }
+    else if (e.key === "ArrowLeft") { step(-1); }
+  });
+
+  /* swipe on touch devices */
+  var startX = null;
+  lb.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; }, {passive: true});
+  lb.addEventListener("touchend", function(e){
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 45) step(dx < 0 ? 1 : -1);
+    startX = null;
+  }, {passive: true});
+})();
+</script>
+</body></html>

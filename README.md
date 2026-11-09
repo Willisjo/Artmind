@@ -5,9 +5,14 @@ Static website for ArtMind Creative Network — *Where art inspires wholeness*.
 ## Structure
 
 ```
-index.html   # single-page site (HTML + inline CSS/JS)
-images/      # site imagery
+index.html      # main single-page site (HTML + inline CSS/JS)
+programme.html  # programme gallery page, opened as programme.html?p=<slug>
+images/         # site imagery
+images/programmes/<slug>/  # photos (and video) for each programme gallery
 ```
+
+Gallery slugs: `artseeds`, `art-in-action`, `creative-journey`, `unmasking-stories`,
+`creative-edge`, `art-for-change`.
 
 No build step and no dependencies — it's plain HTML/CSS/JS.
 
